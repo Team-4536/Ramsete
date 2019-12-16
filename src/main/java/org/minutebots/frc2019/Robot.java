@@ -1,5 +1,8 @@
 package org.minutebots.frc2019;
 
+import org.minutebots.lib.controller.RamseteController;
+import org.minutebots.lib.trajectory.Trajectory;
+
 import edu.wpi.first.wpilibj.TimedRobot;
 
 public class Robot extends TimedRobot {
@@ -9,6 +12,16 @@ public class Robot extends TimedRobot {
    */
   @Override
   public void robotInit() {
+      
+  }
+
+  private Ramsete generateRamsete(){
+      Trajectory trajectory = TrajectoryGenerator.generateTrajectory(Pose2d start, List<Translation2d> interiorWaypoints, Pose2d end,
+            TrajectoryConfig config);
+    
+    RamseteController controller = new RamseteController();
+    
+      return new Ramsete(trajectory, pose, controller, feedforward, kinematics, wheelSpeeds, leftController, rightController, outputVolts);
   }
 
   @Override
