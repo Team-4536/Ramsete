@@ -2,16 +2,15 @@ package org.minutebots.frc2019;
 
 import java.util.function.BiConsumer;
 import java.util.function.Supplier;
-
-import edu.wpi.first.wpilibj.controller.PIDController;
 import edu.wpi.first.wpilibj.Timer;
-import edu.wpi.first.wpilibj.controller.RamseteController;
-import edu.wpi.first.wpilibj.controller.SimpleMotorFeedforward;
-import edu.wpi.first.wpilibj.geometry.Pose2d;
-import edu.wpi.first.wpilibj.kinematics.ChassisSpeeds;
-import edu.wpi.first.wpilibj.kinematics.DifferentialDriveKinematics;
-import edu.wpi.first.wpilibj.kinematics.DifferentialDriveWheelSpeeds;
-import edu.wpi.first.wpilibj.trajectory.Trajectory;
+import org.minutebots.lib.controller.PIDController;
+import org.minutebots.lib.controller.RamseteController;
+import org.minutebots.lib.controller.SimpleMotorFeedforward;
+import org.minutebots.lib.geometry.Pose2d;
+import org.minutebots.lib.kinematics.ChassisSpeeds;
+import org.minutebots.lib.kinematics.DifferentialDriveKinematics;
+import org.minutebots.lib.kinematics.DifferentialDriveWheelSpeeds;
+import org.minutebots.lib.trajectory.Trajectory;
 
 public class Ramsete {
     private final Timer m_timer = new Timer();
@@ -51,7 +50,6 @@ public class Ramsete {
      *                        outputs (in volts) for the robot drive.
      * @param requirements    The subsystems to require.
      */
-    @SuppressWarnings("PMD.ExcessiveParameterList")
     public Ramsete(Trajectory trajectory,
                           Supplier<Pose2d> pose,
                           RamseteController controller,
