@@ -48,7 +48,6 @@ public class Ramsete {
      * @param rightController The PIDController for the right side of the robot drive.
      * @param outputVolts     A function that consumes the computed left and right
      *                        outputs (in volts) for the robot drive.
-     * @param requirements    The subsystems to require.
      */
     public Ramsete(Trajectory trajectory,
                           Supplier<Pose2d> pose,
@@ -83,7 +82,6 @@ public class Ramsete {
      * @param kinematics            The kinematics for the robot drivetrain.
      * @param outputMetersPerSecond A function that consumes the computed left and right
      *                              wheel speeds.
-     * @param requirements          The subsystems to require.
      */
     public Ramsete(Trajectory trajectory,
                           Supplier<Pose2d> pose,
